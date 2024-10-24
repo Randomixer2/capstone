@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Swift Aid</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+        <h1>Swift Aid</h1>
+        
+        <!-- Sign In Form -->
+        <form id="signin-form">
+          <div class="input-group">
+            <div class="input-field">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" placeholder="Username" required>
+            </div>
+            <div class="input-field">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" placeholder="Password" required>
+            </div>
+          </div>
+          <div class="btn-field">
+            <button type="submit">Sign In</button>
+          </div>
+          <p class="toggle-link">Don't have an account? <a href="#" id="toggle-to-signup">Sign Up</a></p>
+        </form>
+
+        <!-- Sign Up Form (Initially Hidden) -->
+        <form id="signup-form" style="display: none;">
+          <h2>Create Account</h2>
+          <div class="input-group">
+            <div class="input-field">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" placeholder="Username" required>
+            </div>
+            <div class="input-field">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" placeholder="Email" required>
+            </div>
+            <div class="input-field">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" placeholder="Password" required>
+            </div>
+          </div>
+          <div class="btn-field">
+            <button type="submit">Sign Up</button>
+          </div>
+          <p class="toggle-link">Already have an account? <a href="#" id="toggle-to-signin">Sign In</a></p>
+        </form>
+    </div>
+  </div>
+
+  <script>
+    const signinForm = document.getElementById('signin-form');
+    const signupForm = document.getElementById('signup-form');
+    const toggleToSignup = document.getElementById('toggle-to-signup');
+    const toggleToSignin = document.getElementById('toggle-to-signin');
+
+    toggleToSignup.addEventListener('click', (e) => {
+        e.preventDefault();
+        signinForm.style.display = 'none';
+        signupForm.style.display = 'block';
+    });
+
+    toggleToSignin.addEventListener('click', (e) => {
+        e.preventDefault();
+        signupForm.style.display = 'none';
+        signinForm.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
